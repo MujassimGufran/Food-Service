@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <title>Index-2</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="show"></div>
+    </div>
+    </div>
+    <script>
+        const Dataitems = [
+            { "id": "MIR101", "image": "https://i.ibb.co/SR1Jzpv/mirinda.png", "type": "Beverage", "name": "Mirinda", "desc": "Mirinda", "veg": "Yes" },
+            { "id": "PEP001", "image": "https://i.ibb.co/3vkKqsF/pepsiblack.png", "type": "Beverage", "name": "Pepsi Black Can", "desc": "Pepsi Black Can", "veg": "Yes" },
+            { "id": "LIT281", "image": "https://i.ibb.co/27PvTng/lit.png", "type": "Beverage", "name": "Lipton IcedTea", "desc": "Lipton Iced Tea", "veg": "Yes" },
+            { "id": "PEP022", "image": "https://i.ibb.co/1M9xDZB/pepsi-new-20190312.png", "type": "Beverage", "name": "Pepsi New", "desc": "Pepsi New", "veg": "Yes" },
+            { "id": "BPCNV1", "image": "https://i.ibb.co/R0VSJjq/Burger-Pizza-Non-Veg-nvg.png", "type": "Burger Pizza", "name": "Classic Non Veg", "desc": "Oven-baked buns with cheese, peri-peri chicken, tomato & capsicum in creamy mayo", "veg": "No" },
+            { "id": "BPCV03", "image": "https://i.ibb.co/Xtx43fT/Burger-Pizza-Veg-423-X420-Pixel-1.png", "type": "Burger Pizza", "name": "Classic Veg", "desc": "Oven-baked buns with cheese, tomato & capsicum in creamy mayo", "veg": "Yes" },
+            { "id": "BPPV04", "image": "https://i.ibb.co/Xtx43fT/Burger-Pizza-Veg-423-X420-Pixel-1.png", "type": "Burger Pizza", "name": "Premium Veg", "desc": "Oven-baked buns with cheese, paneer, tomato, capsicum & red paprika in creamy mayo", "veg": "Yes" },
+            { "id": "DIP033", "image": "https://i.ibb.co/0mbBzsw/new-cheesy.png", "type": "Side Dish", "name": "Cheesy Dip", "desc": "An all-time favorite with your Garlic Breadsticks & Stuffed Garlic Bread for a Cheesy indulgence", "veg": "Yes" },
+            { "id": "DIP072", "image": "https://i.ibb.co/fY52zBw/new-jalapeno.png", "type": "Side Dish", "name": "Cheesy Jalapeno Dip", "desc": "A spicy, tangy flavored cheese dip is a an absolute delight with your favourite Garlic Breadsticks", "veg": "Yes" },
+            { "id": "GAR952", "image": "https://i.ibb.co/BNVmfY9/Garlic-bread.png", "type": "Side Dish", "name": "Garlic Breadsticks", "desc": "Baked to perfection. Your perfect pizza partner! Tastes best with dip", "veg": "Yes" },
+            { "id": "PARCH1", "image": "https://i.ibb.co/prBs3NJ/Parcel-Nonveg.png", "type": "Side Dish", "name": "Chicken Parcel", "desc": "Snacky bites! Pizza rolls with chicken sausage & creamy harissa sauce", "veg": "No" },
+            { "id": "PARVG7", "image": "https://i.ibb.co/JHhrM7d/Parcel-Veg.png", "type": "Side Dish", "name": "Veg Parcel", "desc": "Snacky bites! Pizza rolls with paneer & creamy harissa sauce", "veg": "Yes" },
+            { "id": "PATNV7", "image": "https://i.ibb.co/0m89Jw9/White-Pasta-Nvg.png", "type": "Side Dish", "name": "White Pasta Italiano Non-Veg", "desc": "Creamy white pasta with pepper barbecue chicken", "veg": "No" },
+            { "id": "PATVG4", "image": "https://i.ibb.co/mv8RFbk/White-Pasta-Veg.png", "type": "Side Dish", "name": "White Pasta Italiano Veg", "desc": "Creamy white pasta with herb grilled mushrooms", "veg": "Yes" },
+            { "id": "DES044", "image": "https://i.ibb.co/gvpDKPv/Butterscotch.png", "type": "Dessert", "name": "Butt erscotch Mousse Cake", "desc": "Sweet temptation! Butterscotch flavored mousse", "veg": "Yes" },
+            { "id": "DES028", "image": "https://i.ibb.co/nm96NZW/ChocoLava.png", "type": "Dessert", "name": "Choco Lava Cake", "desc": "Chocolate lovers delight! Indulgent, gooey molten lava inside chocolate cake", "veg": "Yes" },
+            { "id": "PIZVDV", "image": "https://i.ibb.co/F0H0SWG/deluxeveg.png", "type": "Pizza", "name": "Deluxe Veggie", "desc": "Veg delight - onion, capsicum, grilled mushroom, corn & paneer", "veg": "Yes" },
+            { "id": "PIZVFH", "image": "https://i.ibb.co/4mHxB5x/farmhouse.png", "type": "Pizza", "name": "Farmhouse", "desc": "Delightful combination of onion, capsicum, tomato & grilled mushroom", "veg": "Yes" },
+            { "id": "PIZVIT", "image": "https://i.ibb.co/sRH7Qzf/Indian-TandooriPaneer.png", "type": "Pizza", "name": "Indi Tandoori Paneer", "desc": "It is hot. It is spicy. It is oh-soIndian. Tandoori paneer with capsicum, red paprika & mint mayo", "veg": "Yes" },
+            { "id": "PIZVMG", "image": "https://i.ibb.co/MGcHnDZ/mexgreen.png", "type": "Pizza", "name": "Mexican Green Wave", "desc": "Mexican herbs sprinkled on onion, capsicum, tomato & jalapeno", "veg": "Yes" },
+            { "id": "PIZVPP", "image": "https://i.ibb.co/cb5vLX9/peppypaneer.png", "type": "Pizza", "name": "Peppy Paneer", "desc": "Flavorful trio of juicy paneer, crisp capsicum with spicy red paprika", "veg": "Yes" },
+            { "id": "PIZVVE", "image": "https://i.ibb.co/gTy5DTK/vegextra.png", "type": "Pizza", "name": "Veg Extravaganza", "desc": "Black olives, capsicum, onion, grilled mushroom, corn, tomato, jalapeno & extra cheese", "veg": "Yes" },
+            { "id": "PIZNCP", "image": "https://i.ibb.co/b5qBJ9d/cheesepepperoni.png", "type": "Pizza", "name": "Chicken Pepperoni", "desc": "A classic American taste! Relish the delectable flavor of Chicken Pepperoni, topped with extra cheese", "veg": "No" },
+            { "id": "PIZNCD", "image": "https://i.ibb.co/GFtkbB1/ChickenDominator10.png", "type": "Pizza", "name": "Chicken Dominator", "desc": "Loaded with double pepper barbecue chicken, peri-peri chicken, chicken tikka & grilled chicken rashers", "veg": "No" },
+            { "id": "PIZNPB", "image": "https://i.ibb.co/GxbtcLK/Pepper-Barbeque-OnionC.png", "type": "Pizza", "name": "Pepper Barbecue & Onion", "desc": "A classic favourite with pepper barbeque chicken & onion", "veg": "No" },
+            { "id": "PIZNIC", "image": "https://i.ibb.co/6Z5wBqr/Indian-Tandoori-ChickenTikka.png", "type": "Pizza", "name": "Indi Chicken Tikka", "desc": "The wholesome flavour of tandoori masala with Chicken tikka, onion, red paprika & mint mayo", "veg": "No" }
+        ];
+
+        sizes = ["Regular", "Medium", "Large"];
+        crusts = ["New Hand Tossed", "Wheat Thin Crust", "Cheese Burst", "Fresh Pan Pizza", "Classic Hand Tossed"];
+        const cart = [];
+
+
+        show();
+        function show(active = 0) {
+            let str = makeNavbar(active);
+            active === 1 ? str += showVegPizzaTable() : str += '';
+            active === 2 ? str += showNonVegPizzaTable() : str += '';
+            active === 3 ? str += showDishesTable() : str += '';
+            active === 4 ? str += showOtherTable() : str += '';
+            document.getElementById('show').innerHTML = str;
+        }
+
+        function showVegPizza() {
+            show(1);
+        }
+        function showNonVegPizza() {
+            show(2);
+        }
+        function showDishes() {
+            show(3);
+        }
+        function showOther() {
+            show(4);
+        }
+
+        function showVegPizzaTable() {
+            let str = '<div class="col-12 mt-3 ">';
+            str += '<div class="row">';
+
+            str += '<div class="col-md-8 pr-0">';
+            str += '<div class="row   no-gutters">';
+
+            Dataitems.filter(item => item.veg === "Yes" && item.type === "Pizza").map((item, index) => {
+                const cartItem = cart.find(pizza => pizza.name === item.name);
+                str += '<div class="col-6">';
+                str += '<div class="card" style="height: 100%;">';
+                str += '<img src="' + item.image + '" class="card-img-top mx-auto mt-2" style="width: 90%; height: 130px;" alt="' + item.name + '">';
+                str += '<div class="card-body d-flex flex-column justify-content-between">';
+                str += '<div class="text-center">';
+                str += '<div class="card-title text-dark">' + item.name + '</div>';
+                str += '<div class="card-text">' + item.desc + '</div>';
+                str += '</div>';
+                str += '<div>';
+                str += '<div class="row">';
+                str += '<div class="col-md-6">';
+
+                str += makeDropdown('sizeSelect_' + index, sizes, 'Select Size', cartItem ? cartItem.size : '');
+                str += '</div>';
+                str += '<div class="col-md-6">';
+                str += makeDropdown('crustSelect_' + index, crusts, 'Select Crust', cartItem ? cartItem.crust : '');
+                str += '</div>';
+                str += '</div>';
+                str += '<div class="text-center mt-3">';
+                if (cartItem) {
+                    str += '<div class="btn-group">';
+                    str += '<button class="btn btn-danger" onclick="subQty(\'' + item.name + '\', \'Veg\')"><i class="fas fa-minus"></i></button>';
+                    str += '<span class="btn btn-secondary ml-1">' + cartItem.quantity + '</span>';
+                    str += '<button class="btn btn-success ml-1" onclick="addQty(\'' + item.name + '\', \'Veg\')"><i class="fas fa-plus"></i></button>';
+                    str += '</div>';
+                } else {
+                    str += '<button class="btn btn-primary" onclick="addToCart(\'' + item.name + '\', \'' + item.desc + '\', \'' + item.image + '\', document.getElementById(\'sizeSelect_' + index + '\').value, document.getElementById(\'crustSelect_' + index + '\').value, \'Veg\')">Add to Cart</button>';
+                }
+                str += '</div>';
+
+                str += '</div>';
+                str += '</div>';
+                str += '</div>';
+                str += '</div>';
+            });
+            str += '</div>';
+            str += '</div>';
+            str += '<div class="col-md-4 pl-0">';
+            str += '<div class="row no-gutters border h-100">';
+            if (cart.length === 0) {
+                str += '<div class="text-center">Cart is empty</div>';
+            } else {
+                str += '<div class="card col-12">';
+                str += '<h4 class="text-center">Cart</h4><br>';
+                cart.map((pizza, index) => {
+                    str += '<div class="row border no-gutters">';
+                    str += '<div class="col-md-4 d-flex align-items-center justify-content-center">';
+                    str += '<img src="' + pizza.image + '" class="img-fluid">';
+                    str += '</div>';
+                    str += '<div class="col-md-8">';
+                    str += '<div class="card-body">';
+                    str += '<h5 class="card-title">' + pizza.name + '</h5>';
+                    str += '<p class="card-text">' + pizza.desc + '</p>';
+                    str += '<p>' + pizza.size + ' | ' + pizza.crust + '</p>';
+                    str += '<div class="btn-group">';
+                    str += '<button class="btn btn-danger" onclick="subQty(\'' + pizza.name + '\', \'Veg\')"><i class="fas fa-minus"></i></button>';
+                    str += '<span class="btn btn-secondary ml-1">' + pizza.quantity + '</span>';
+                    str += '<button class="btn btn-success ml-1" onclick="addQty(\'' + pizza.name + '\', \'Veg\')"><i class="fas fa-plus"></i></button>';
+                    str += '</div>';
+                    str += '</div>';
+                    str += '</div>';
+                    str += '</div>';
+                });
+                str += '</div>';
+            }
+            str += '</div>';
+            str += '</div>';
+            str += '</div>';
+
+            return str;
+        }
+
+
+
+
+        function showNonVegPizzaTable() {
+            let str = '<div class="col-12 mt-3 ">';
+            str += '<div class="row">';
+
+            str += '<div class="col-md-8 pr-0">';
+            str += '<div class="row   no-gutters">';
+
+            Dataitems.filter(item => item.veg === "No" && item.type === "Pizza").map((item, index) => {
+                const cartItem = cart.find(pizza => pizza.name === item.name);
+                str += '<div class="col-6">';
+                str += '<div class="card" style="height: 100%;">';
+                str += '<img src="' + item.image + '" class="card-img-top mx-auto mt-2" style="width: 90%; height: 130px;" alt="' + item.name + '">';
+                str += '<div class="card-body d-flex flex-column justify-content-between">';
+                str += '<div class="text-center">';
+                str += '<div class="card-title text-dark">' + item.name + '</div>';
+                str += '<div class="card-text">' + item.desc + '</div>';
+                str += '</div>';
+                str += '<div>';
+                str += '<div class="row">';
+                str += '<div class="col-md-6">';
+
+                str += makeDropdown('sizeSelect_' + index, sizes, 'Select Size', cartItem ? cartItem.size : '');
+                str += '</div>';
+                str += '<div class="col-md-6">';
+                str += makeDropdown('crustSelect_' + index, crusts, 'Select Crust', cartItem ? cartItem.crust : '');
+                str += '</div>';
+                str += '</div>';
+                str += '<div class="text-center mt-3">';
+                if (cartItem) {
+                    str += '<div class="btn-group">';
+                    str += '<button class="btn btn-danger" onclick="subQty(\'' + item.name + '\', \'NonVeg\')"><i class="fas fa-minus"></i></button>';
+                    str += '<span class="btn btn-secondary ml-1">' + cartItem.quantity + '</span>';
+                    str += '<button class="btn btn-success ml-1" onclick="addQty(\'' + item.name + '\', \'NonVeg\')"><i class="fas fa-plus"></i></button>';
+                    str += '</div>';
+                } else {
+                    str += '<button class="btn btn-primary" onclick="addToCart(\'' + item.name + '\', \'' + item.desc + '\', \'' + item.image + '\', document.getElementById(\'sizeSelect_' + index + '\').value, document.getElementById(\'crustSelect_' + index + '\').value, \'NonVeg\')">Add to Cart</button>';
+                }
+                str += '</div>';
+
+                str += '</div>';
+                str += '</div>';
+                str += '</div>';
+                str += '</div>';
+            });
+            str += '</div>';
+            str += '</div>';
+            str += '<div class="col-md-4 pl-0">';
+            str += '<div class="row no-gutters border h-100">';
+            if (cart.length === 0) {
+                str += '<div class="text-center">Cart is empty</div>';
+            } else {
+                str += '<div class="card col-12">';
+                str += '<h4 class="text-center">Cart</h4><br>';
+                cart.map((pizza, index) => {
+                    str += '<div class="row border no-gutters">';
+                    str += '<div class="col-md-4 d-flex align-items-center justify-content-center">';
+                    str += '<img src="' + pizza.image + '" class="img-fluid">';
+                    str += '</div>';
+                    str += '<div class="col-md-8">';
+                    str += '<div class="card-body">';
+                    str += '<h5 class="card-title">' + pizza.name + '</h5>';
+                    str += '<p class="card-text">' + pizza.desc + '</p>';
+                    str += '<p>' + pizza.size + ' | ' + pizza.crust + '</p>';
+                    str += '<div class="btn-group">';
+                    str += '<button class="btn btn-danger" onclick="subQty(\'' + pizza.name + '\', \'NonVeg\')"><i class="fas fa-minus"></i></button>';
+                    str += '<span class="btn btn-secondary ml-1">' + pizza.quantity + '</span>';
+                    str += '<button class="btn btn-success ml-1" onclick="addQty(\'' + pizza.name + '\', \'NonVeg\')"><i class="fas fa-plus"></i></button>';
+                    str += '</div>';
+                    str += '</div>';
+                    str += '</div>';
+                    str += '</div>';
+                });
+                str += '</div>';
+            }
+            str += '</div>';
+            str += '</div>';
+            str += '</div>';
+
+            return str;
+        }
+
+        function makeNavbar(active = 0) {
+            let str = '<nav class="navbar navbar-expand-lg  navbar-light bg-light">';
+            str += ' <a class="navbar-brand" href="#">MyFavPizza </a>';
+            str += '<button class="navbar-toggler" type="button" data-bs-toggle="collapse" datatarget="#navbarNavDropdown" >';
+            str += '<span class="navbar-toggler-icon"></span>';
+            str += '</button >';
+            str += '<div class="collapse navbar-collapse" id="navbarNavDropdown">';
+            str += '<ul class="navbar-nav">';
+            let active1 = active === 1 ? 'active' : '';
+            let active2 = active === 2 ? 'active' : '';
+            let active3 = active === 3 ? 'active' : '';
+            let active4 = active === 4 ? 'active' : '';
+            let active5 = active === 5 ? 'active' : '';
+            str += '<li class="nav-item ' + active1 + '">'
+            str += '<a class="nav-link" onclick="showVegPizza()">Veg Pizza</a>';
+            str += '</li >';
+            str += '<li class="nav-item ' + active2 + '">'
+            str += '<a class="nav-link" onclick="showNonVegPizza()">Non-Veg Pizza</a>';
+            str += '</li >';
+            str += '<li class="nav-item ' + active3 + '">'
+            str += '<a class="nav-link" onclick="showDishes()">Side Dishes</a>';
+            str += '</li >';
+            str += '<li class="nav-item ' + active4 + '">'
+            str += '<a class="nav-link" onclick="showOther()">Other Item</a>';
+            str += '</li >';
+            str += '</ul>'
+            str += '</div >';
+            str += '</nav >';
+            return str;
+        }
+
+        function showDishesTable() {
+            let str = '<div class="col-12 mt-3 ">';
+            str += '<div class="row">';
+
+            str += '<div class="col-md-8 pr-0">';
+            str += '<div class="row   no-gutters">';
+
+            Dataitems.filter(item => item.veg === "Yes" && item.type === "Side Dish").map((item) => {
+                const cartItem = cart.find(pizza => pizza.name === item.name);
+                str += '<div class="col-6">';
+                str += '<div class="card" style="height: 100%;">';
+                str += '<img src="' + item.image + '" class="card-img-top mx-auto mt-2" style="width: 90%; height: 130px;" alt="' + item.name + '">';
+                str += '<div class="card-body d-flex flex-column justify-content-between">';
+                str += '<div class="text-center">';
+                str += '<div class="card-title text-dark">' + item.name + '</div>';
+                str += '<div class="card-text">' + item.desc + '</div>';
+                str += '</div>';
+                str += '<div>';
+                str += '<div class="text-center mt-3">';
+                if (cartItem) {
+                    str += '<div class="btn-group">';
+                    str += '<button class="btn btn-danger" onclick="subQty(\'' + item.name + '\', \'SideDish\')"><i class="fas fa-minus"></i></button>';
+                    str += '<span class="btn btn-secondary ml-1">' + cartItem.quantity + '</span>';
+                    str += '<button class="btn btn-success ml-1" onclick="addQty(\'' + item.name + '\', \'SideDish\')"><i class="fas fa-plus"></i></button>';
+                    str += '</div>';
+                } else {
+                    str += '<button class="btn btn-primary" onclick="addToCart(\'' + item.name + '\', \'' + item.desc + '\', \'' + item.image + '\', \'' + item.size + '\', \'' + item.crust + '\', \'SideDish\')">Add to Cart</button>';
+                }
+                str += '</div>';
+
+                str += '</div>';
+                str += '</div>';
+                str += '</div>';
+                str += '</div>';
+            });
+            str += '</div>';
+            str += '</div>';
+            str += '<div class="col-md-4 pl-0">';
+            str += '<div class="row no-gutters border h-100">';
+            if (cart.length === 0) {
+                str += '<div class="text-center">Cart is empty</div>';
+            } else {
+                str += '<div class="card col-12">';
+                str += '<h4 class="text-center">Cart</h4><br>';
+                cart.map((pizza, index) => {
+                    str += '<div class="row border no-gutters">';
+                    str += '<div class="col-md-4 d-flex align-items-center justify-content-center">';
+                    str += '<img src="' + pizza.image + '" class="img-fluid">';
+                    str += '</div>';
+                    str += '<div class="col-md-8">';
+                    str += '<div class="card-body">';
+                    str += '<h5 class="card-title">' + pizza.name + '</h5>';
+                    str += '<p class="card-text">' + pizza.desc + '</p>';
+                    str += '<div class="btn-group">';
+                    str += '<button class="btn btn-danger" onclick="subQty(\'' + pizza.name + '\', \'SideDish\')"><i class="fas fa-minus"></i></button>';
+                    str += '<span class="btn btn-secondary ml-1">' + pizza.quantity + '</span>';
+                    str += '<button class="btn btn-success ml-1" onclick="addQty(\'' + pizza.name + '\', \'SideDish\')"><i class="fas fa-plus"></i></button>';
+                    str += '</div>';
+                    str += '</div>';
+                    str += '</div>';
+                    str += '</div>';
+                });
+                str += '</div>';
+            }
+            str += '</div>';
+            str += '</div>';
+            str += '</div>';
+
+            return str;
+        }
+
+        function showOtherTable() {
+            let str = '<div class="col-12 mt-3 ">';
+            str += '<div class="row">';
+            str += '<div class="col-md-8 pr-0">';
+            str += '<div class="row   no-gutters">';
+
+            Dataitems.filter(item => item.veg === "Yes" && (item.type === "Beverage" || item.type === "Dessert" || item.type === "Burger Pizza")).map((item) => {
+                const cartItem = cart.find(pizza => pizza.name === item.name);
+                str += '<div class="col-6">';
+                str += '<div class="card" style="height: 100%;">';
+                str += '<img src="' + item.image + '" class="card-img-top mx-auto mt-2" style="width: 90%; height: 130px;" alt="' + item.name + '">';
+                str += '<div class="card-body d-flex flex-column justify-content-between">';
+                str += '<div class="text-center">';
+                str += '<div class="card-title text-dark">' + item.name + '</div>';
+                str += '<div class="card-text">' + item.desc + '</div>';
+                str += '</div>';
+                str += '<div>';
+                str += '<div class="text-center mt-3">';
+                if (cartItem) {
+                    str += '<div class="btn-group">';
+                    str += '<button class="btn btn-danger" onclick="subQty(\'' + item.name + '\', \'other\')"><i class="fas fa-minus"></i></button>';
+                    str += '<span class="btn btn-secondary ml-1">' + cartItem.quantity + '</span>';
+                    str += '<button class="btn btn-success ml-1" onclick="addQty(\'' + item.name + '\', \'other\')"><i class="fas fa-plus"></i></button>';
+                    str += '</div>';
+                } else {
+                    str += '<button class="btn btn-primary" onclick="addToCart(\'' + item.name + '\', \'' + item.desc + '\', \'' + item.image + '\', \'' + item.size + '\', \'' + item.crust + '\', \'other\')">Add to Cart</button>';
+                }
+                str += '</div>';
+                str += '</div>';
+                str += '</div>';
+                str += '</div>';
+                str += '</div>';
+            });
+
+
+            str += '</div>';
+            str += '</div>';
+            str += '<div class="col-md-4 pl-0">';
+            str += '<div class="row no-gutters border h-100">';
+            if (cart.length === 0) {
+                str += '<div class="text-center">Cart is empty</div>';
+            } else {
+                str += '<div class="card col-12">';
+                str += '<h4 class="text-center">Cart</h4><br>';
+                cart.map((pizza, index) => {
+                    str += '<div class="row border no-gutters">';
+                    str += '<div class="col-md-4 d-flex align-items-center justify-content-center">';
+                    str += '<img src="' + pizza.image + '" class="img-fluid">';
+                    str += '</div>';
+                    str += '<div class="col-md-8">';
+                    str += '<div class="card-body">';
+                    str += '<h5 class="card-title">' + pizza.name + '</h5>';
+                    str += '<p class="card-text">' + pizza.desc + '</p>';
+                    str += '<div class="btn-group">';
+                    str += '<button class="btn btn-danger" onclick="subQty(\'' + pizza.name + '\', \'other\')"><i class="fas fa-minus"></i></button>';
+                    str += '<span class="btn btn-secondary ml-1">' + pizza.quantity + '</span>';
+                    str += '<button class="btn btn-success ml-1" onclick="addQty(\'' + pizza.name + '\', \'other\')"><i class="fas fa-plus"></i></button>';
+                    str += '</div>';
+                    str += '</div>';
+                    str += '</div>';
+                    str += '</div>';
+                });
+                str += '</div>';
+            }
+            str += '</div>';
+            str += '</div>';
+            str += '</div>';
+
+            return str;
+        }
+        function subQty(name, type) {
+            const cartItem = cart.find(pizza => pizza.name === name);
+            if (cartItem) {
+                if (cartItem.quantity > 1) {
+                    cartItem.quantity--;
+                } else {
+                    cart.splice(cart.indexOf(cartItem), 1);
+                }
+                if (type === "Veg") {
+                    showVegPizza();
+                } else if (type === "NonVeg") {
+                    showNonVegPizza();
+                } else if (type === "SideDish") {
+                    showDishes();
+                } else if (type === "other") {
+                    showOther();
+                }
+            }
+        }
+
+        function addQty(name, type) {
+            const cartItem = cart.find(pizza => pizza.name === name);
+            if (cartItem) {
+                cartItem.quantity++;
+            }
+            if (type === "Veg") {
+                showVegPizza();
+            } else if (type === "NonVeg") {
+                showNonVegPizza();
+            } else if (type === "SideDish") {
+                showDishes();
+            } else if (type === "other") {
+                showOther();
+            }
+        }
+
+
+        function addToCart(name, desc, image, size, crust, type) {
+            if (size === '') {
+                alert('Please select a size before adding to the cart.');
+                return;
+            }
+            if (crust === '') {
+                alert('Please select a crust before adding to the cart.');
+                return;
+            }
+            const selectedPizza = {
+                name: name,
+                desc: desc,
+                image: image,
+                size: size,
+                crust: crust,
+                quantity: 1,
+            };
+            cart.push(selectedPizza);
+            if (type === "Veg") {
+                showVegPizza();
+            } else if (type === "NonVeg") {
+                showNonVegPizza();
+            } else if (type === "SideDish") {
+                showDishes();
+            } else if (type === "other") {
+                showOther();
+            }
+        }
+        function makeDropdown(id, options, header, selectedValue = "") {
+            const arr1 = options.map(opt => {
+                return '<option' + (selectedValue === opt ? ' selected' : '') + '>' + opt + '</option>';
+            });
+            let s1 = '<div class="form-group">';
+            s1 += '<select id="' + id + '" class="form-control" ' + (selectedValue ? 'disabled' : '') + '>';
+            s1 += '<option value="" disabled selected>' + header + '</option>';
+            s1 += arr1.join('');
+            s1 += '</select>';
+            s1 += '</div>';
+            return s1;
+        }
+
+
+    </script>
+</body>
+
+</html>
